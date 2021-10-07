@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var loginCadastrado = "teste"; //login de cadastro
+    var senhaCadastrada = "teste123"; // senha de cadastro
+    var cont = 2;
+   
+    var loginInformado = prompt("Informe seu login:");
+    var senhaInformada = prompt("Informe a sua senha:");
+
+       	if ((senhaInformada == senhaCadastrada) && (loginInformado == loginCadastrado)){
+    		mostra("Parabéns, " + loginInformado + " você entrou no sistema.")
+    
+    	} else {
+    		while (cont >= 1){ //laço de repetição para contar a quantidade de tentativas de inserção da senha
+    			alert ("Você errou sua senha. Você terá " + cont + " novas chances.")
+    			cont = cont - 1 // contador que irá diminuir a quantidade de chances para inserir novamente a senha
+    		
+    				var loginInformado = prompt("Informe seu login:");
+    				var senhaInformada = prompt("Informe a sua senha:");
+
+       					if ((senhaInformada == senhaCadastrada) && (loginInformado == loginCadastrado)){
+    					mostra("Parabéns, " + loginInformado + " você entrou no sistema.")
+    				}
+
+    		if (cont == 0) { //se o contador chegar a zero, acabam-se as chances
+    		mostra ("Ops, parece que você bloqueou a sua conta. Tente novamente outro dia.")}
+    	}
+    }
+
+</script>
